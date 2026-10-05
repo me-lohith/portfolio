@@ -1,0 +1,2593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- =====================================================
+         HEAD SECTION
+         ===================================================== -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>S. Lohith | CSE Student • Builder • Future Technologist</title>
+
+    <!-- Google Fonts -->
+    <style>
+
+        /* =====================================================
+           GEN-Z PORTFOLIO CSS
+           ===================================================== */
+
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+        :root {
+            --ink: #111111;
+            --paper: #fffdf7;
+
+            --yellow: #ffe45e;
+            --pink: #ff72c6;
+            --cyan: #62e8ff;
+            --lime: #b8ff5c;
+            --purple: #9b7cff;
+            --orange: #ff9b4a;
+
+            --muted: #666;
+            --line: #161616;
+
+            --shadow: 8px 8px 0 var(--ink);
+            --radius: 24px;
+        }
+
+
+        /* =====================================================
+           GLOBAL
+           ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            color: var(--ink);
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(255,114,198,.25),
+                    transparent 22%
+                ),
+
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(98,232,255,.28),
+                    transparent 25%
+                ),
+
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(184,255,92,.25),
+                    transparent 25%
+                ),
+
+                var(--paper);
+
+            font-family: "Space Grotesk", Arial, sans-serif;
+
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+
+        /* =====================================================
+           GRAIN / NOISE
+           ===================================================== */
+
+        .noise {
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: .035;
+
+            background-image:
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+
+            z-index: 99;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+           ===================================================== */
+
+        nav {
+            position: sticky;
+
+            top: 0;
+
+            z-index: 50;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 14px 5vw;
+
+            border-bottom: 3px solid var(--line);
+
+            background: rgba(255,253,247,.86);
+
+            backdrop-filter: blur(14px);
+        }
+
+        .brand {
+            font-family: "DM Mono", monospace;
+
+            font-weight: 500;
+
+            text-decoration: none;
+
+            background: var(--ink);
+
+            color: white;
+
+            padding: 7px 12px;
+
+            border-radius: 10px;
+        }
+
+        nav .links {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 18px;
+        }
+
+        nav .links a {
+            text-decoration: none;
+
+            font-weight: 700;
+        }
+
+        nav .links a:hover {
+            text-decoration: underline;
+
+            text-decoration-thickness: 3px;
+        }
+
+
+        /* =====================================================
+           COMMON
+           ===================================================== */
+
+        .wrap {
+            width: min(1180px, 90vw);
+
+            margin: auto;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+
+        /* =====================================================
+           HERO
+           ===================================================== */
+
+        .hero {
+            min-height: 88vh;
+
+            display: grid;
+
+            grid-template-columns: 1.15fr .85fr;
+
+            align-items: center;
+
+            gap: 60px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+
+            font-family: "DM Mono", monospace;
+
+            font-size: .9rem;
+
+            font-weight: 700;
+
+            background: var(--yellow);
+
+            border: 3px solid var(--line);
+
+            padding: 7px 12px;
+
+            transform: rotate(-2deg);
+
+            box-shadow: 5px 5px 0 var(--ink);
+        }
+
+        h1 {
+            font-size: clamp(4rem, 10vw, 8.7rem);
+
+            line-height: .82;
+
+            letter-spacing: -0.075em;
+
+            margin: 24px 0;
+        }
+
+        h1 .accent {
+            color: var(--pink);
+
+            -webkit-text-stroke: 2px var(--ink);
+        }
+
+        h2 {
+            font-size: clamp(2.2rem, 5vw, 4.5rem);
+
+            line-height: .95;
+
+            margin: 0 0 28px;
+
+            letter-spacing: -.05em;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+
+            margin: 0 0 8px;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+
+            margin: 0 0 8px;
+        }
+
+        h5 {
+            margin: 0 0 6px;
+        }
+
+        h6 {
+            margin: 0 0 4px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .12em;
+        }
+
+        .hero-copy p {
+            max-width: 700px;
+
+            font-size: 1.2rem;
+        }
+
+        .hero-copy mark {
+            background: var(--lime);
+
+            padding: 2px 5px;
+        }
+
+
+        /* =====================================================
+           HERO BUTTONS
+           ===================================================== */
+
+        .hero-actions {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+
+            font-weight: 800;
+
+            border: 3px solid var(--ink);
+
+            padding: 12px 18px;
+
+            border-radius: 13px;
+
+            box-shadow: 5px 5px 0 var(--ink);
+
+            transition:
+                transform .15s ease,
+                box-shadow .15s ease;
+
+            background: white;
+        }
+
+        .btn:hover {
+            transform: translate(3px,3px);
+
+            box-shadow: 2px 2px 0 var(--ink);
+        }
+
+        .btn.primary {
+            background: var(--cyan);
+        }
+
+        .btn.pink {
+            background: var(--pink);
+        }
+
+
+        /* =====================================================
+           PORTRAIT
+           ===================================================== */
+
+        .portrait-card {
+            position: relative;
+
+            padding: 16px;
+
+            background: var(--yellow);
+
+            border: 4px solid var(--ink);
+
+            border-radius: 30px;
+
+            box-shadow: 14px 14px 0 var(--ink);
+
+            transform: rotate(2deg);
+        }
+
+        .portrait {
+            display: block;
+
+            width: 100%;
+
+            height: 570px;
+
+            object-fit: cover;
+
+            object-position: center top;
+
+            border: 4px solid var(--ink);
+
+            border-radius: 18px;
+
+            background: #ddd;
+        }
+
+        .sticker {
+            position: absolute;
+
+            z-index: 2;
+
+            border: 3px solid var(--ink);
+
+            padding: 10px 13px;
+
+            font-weight: 900;
+
+            box-shadow: 5px 5px 0 var(--ink);
+
+            transform: rotate(-8deg);
+        }
+
+        .sticker.one {
+            top: 35px;
+
+            right: -35px;
+
+            background: var(--pink);
+        }
+
+        .sticker.two {
+            bottom: 40px;
+
+            left: -38px;
+
+            background: var(--cyan);
+
+            transform: rotate(7deg);
+        }
+
+
+        /* =====================================================
+           TICKER
+           ===================================================== */
+
+        .ticker {
+            overflow: hidden;
+
+            border-block: 4px solid var(--ink);
+
+            background: var(--ink);
+
+            color: white;
+
+            white-space: nowrap;
+        }
+
+        .ticker-track {
+            display: inline-block;
+
+            padding: 14px 0;
+
+            animation: slide 20s linear infinite;
+
+            font-family: "DM Mono", monospace;
+
+            font-weight: 700;
+        }
+
+        @keyframes slide {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+
+        }
+
+
+        /* =====================================================
+           SECTION LABEL
+           ===================================================== */
+
+        .section-tag {
+            display: inline-block;
+
+            margin-bottom: 18px;
+
+            font-family: "DM Mono", monospace;
+
+            background: var(--purple);
+
+            color: white;
+
+            border: 3px solid var(--ink);
+
+            padding: 6px 10px;
+
+            box-shadow: 4px 4px 0 var(--ink);
+        }
+
+
+        /* =====================================================
+           GRIDS
+           ===================================================== */
+
+        .grid-2 {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 24px;
+        }
+
+
+        /* =====================================================
+           CARDS
+           ===================================================== */
+
+        .card {
+            border: 3px solid var(--ink);
+
+            border-radius: var(--radius);
+
+            padding: 26px;
+
+            background: white;
+
+            box-shadow: var(--shadow);
+        }
+
+        .card:nth-child(2n) {
+            background: #fff0fa;
+        }
+
+        .card:nth-child(3n) {
+            background: #effcff;
+        }
+
+        .about-card {
+            background: var(--lime);
+        }
+
+        .about-card p {
+            font-size: 1.08rem;
+        }
+
+
+        /* =====================================================
+           TAGS
+           ===================================================== */
+
+        .tag-cloud {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 20px;
+        }
+
+        .tag {
+            border: 2px solid var(--ink);
+
+            padding: 7px 11px;
+
+            border-radius: 999px;
+
+            background: white;
+
+            font-weight: 700;
+
+            box-shadow: 3px 3px 0 var(--ink);
+        }
+
+
+        /* =====================================================
+           EDUCATION TIMELINE
+           ===================================================== */
+
+        .timeline {
+            display: grid;
+
+            gap: 16px;
+        }
+
+        .timeline-item {
+            display: grid;
+
+            grid-template-columns: 130px 1fr;
+
+            gap: 18px;
+
+            padding: 20px;
+
+            border: 3px solid var(--ink);
+
+            border-radius: 18px;
+
+            background: white;
+        }
+
+        .year {
+            font-family: "DM Mono", monospace;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           PROJECTS
+           ===================================================== */
+
+        .project {
+            position: relative;
+
+            overflow: hidden;
+
+            min-height: 250px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+        }
+
+        .project .number {
+            font-family: "DM Mono", monospace;
+
+            font-size: 3rem;
+
+            font-weight: 700;
+
+            opacity: .3;
+        }
+
+
+        /* =====================================================
+           ACHIEVEMENTS
+           ===================================================== */
+
+        .achievement {
+            min-height: 210px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+        }
+
+        .achievement .emoji {
+            font-size: 2.5rem;
+        }
+
+
+        /* =====================================================
+           SOCIAL LINKS
+           ===================================================== */
+
+        .socials {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 16px;
+
+            margin-top: 22px;
+        }
+
+        .social {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            border: 3px solid var(--ink);
+
+            border-radius: 16px;
+
+            padding: 10px 14px;
+
+            text-decoration: none;
+
+            font-weight: 800;
+
+            background: white;
+
+            box-shadow: 5px 5px 0 var(--ink);
+        }
+
+        .social:hover {
+            transform: translate(2px,2px);
+
+            box-shadow: 3px 3px 0 var(--ink);
+        }
+
+        .social img {
+            width: 34px;
+
+            height: 34px;
+
+            object-fit: contain;
+        }
+
+
+        /* =====================================================
+           CONTACT
+           ===================================================== */
+
+        .contact {
+            background: var(--ink);
+
+            color: white;
+
+            border-radius: 30px;
+
+            padding: 50px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .contact::after {
+            content: "LET'S BUILD";
+
+            position: absolute;
+
+            right: -30px;
+
+            bottom: -35px;
+
+            font-size: clamp(4rem, 12vw, 10rem);
+
+            font-weight: 900;
+
+            opacity: .06;
+
+            transform: rotate(-8deg);
+        }
+
+        .contact a {
+            color: var(--yellow);
+        }
+
+
+        /* =====================================================
+           HTML LAB
+           ===================================================== */
+
+        .html-lab {
+            border: 4px dashed var(--ink);
+
+            border-radius: 26px;
+
+            padding: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff 0%,
+                    #fff7cf 100%
+                );
+        }
+
+
+        /* =====================================================
+           TABLE
+           ===================================================== */
+
+        .mini-table {
+            width: 100%;
+
+            border-collapse: collapse;
+
+            margin-top: 18px;
+
+            background: white;
+
+            border: 3px solid var(--ink);
+        }
+
+        .mini-table caption {
+            caption-side: top;
+
+            font-weight: 900;
+
+            padding: 10px;
+        }
+
+        .mini-table th,
+        .mini-table td {
+            border: 2px solid var(--ink);
+
+            padding: 10px;
+
+            text-align: left;
+        }
+
+        .mini-table th {
+            background: var(--purple);
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           PRE
+           ===================================================== */
+
+        pre {
+            overflow-x: auto;
+
+            padding: 18px;
+
+            border-radius: 16px;
+
+            background: #171717;
+
+            color: #eaffaa;
+
+            border: 3px solid var(--ink);
+
+            font-family: "DM Mono", monospace;
+        }
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        footer {
+            text-align: center;
+
+            padding: 35px 0;
+
+            font-family: "DM Mono", monospace;
+
+            border-top: 3px solid var(--ink);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE DESIGN
+           ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .hero,
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 45px;
+            }
+
+            .portrait {
+                height: 520px;
+            }
+
+            nav {
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+            }
+
+            .contact {
+                padding: 30px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         BODY
+         ===================================================== -->
+
+    <div class="noise"></div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <nav>
+
+        <a class="brand"
+           href="#top"
+           title="Back to top">
+
+            LOHITH.S
+
+        </a>
+
+
+        <div class="links">
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#education">
+                Education
+            </a>
+
+            <a href="#skills">
+                Skills
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#achievements">
+                Wins
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main id="top">
+
+
+        <!-- =================================================
+             HERO SECTION
+             ================================================= -->
+
+        <section class="wrap hero">
+
+
+            <div class="hero-copy">
+
+
+                <span class="eyebrow">
+
+                    B.E. CSE • RMK ENGINEERING COLLEGE • 2026—2030
+
+                </span>
+
+
+                <h1>
+
+                    S.<br>
+
+                    <span class="accent">
+                        LOHITH
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    Aspiring engineer exploring the intersection of
+
+                    <mark>robotics</mark>,
+
+                    semiconductors,
+
+                    AI/ML and cybersecurity —
+
+                    while building real things,
+
+                    learning fast and keeping an eye on
+
+                    the business side of technology.
+
+                </p>
+
+
+                <!-- HERO BUTTONS -->
+
+                <div class="hero-actions">
+
+
+                    <a class="btn primary"
+                       href="#projects">
+
+                        See my work →
+
+                    </a>
+
+
+                    <a class="btn pink"
+                       href="#contact">
+
+                        Let's connect ↗
+
+                    </a>
+
+
+                    <!-- DOWNLOADABLE RESUME BUTTON -->
+
+                    <a class="btn"
+                       href="S_Lohith_Resume.docx"
+                       download="S_Lohith_Resume.docx"
+                       title="Download S. Lohith's resume">
+
+                        📄 Download Resume
+
+                    </a>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     SOCIAL LINKS
+                     ================================================= -->
+
+                <div class="socials">
+
+
+                    <!-- LINKEDIN -->
+
+                    <a class="social"
+                       href="https://www.linkedin.com/in/lohith-s-0b3135433"
+                       target="_blank"
+                       rel="noopener"
+                       title="Open Lohith's LinkedIn profile">
+
+
+                        <img
+                            alt="LinkedIn logo"
+                            title="LinkedIn"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='8' fill='%230A66C2'/%3E%3Ctext x='8' y='36' font-family='Arial' font-size='30' font-weight='700' fill='white'%3Ein%3C/text%3E%3C/svg%3E">
+
+
+                        LinkedIn
+
+                    </a>
+
+
+                    <!-- LEETCODE -->
+
+                    <a class="social"
+                       href="https://leetcode.com/u/lohi_2008/"
+                       target="_blank"
+                       rel="noopener"
+                       title="Open Lohith's LeetCode profile">
+
+
+                        <img
+                            alt="LeetCode logo"
+                            title="LeetCode"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%23FFA116'/%3E%3Cpath d='M14 29c4-10 8-15 13-15 4 0 5 3 8 5l-4 4c-2-2-3-3-5-3-2 0-4 3-7 9 4-2 7-1 11 2l-3 5c-4-3-7-4-13-1z' fill='white'/%3E%3C/svg%3E">
+
+
+                        LeetCode
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PHOTO
+                 ================================================= -->
+
+            <div class="portrait-card">
+
+
+                <span class="sticker one">
+
+                    BUILD • LEARN • REPEAT
+
+                </span>
+
+
+                <!--
+                    Your photo.
+                    Keep this file here:
+
+                    assets/lohith.png
+                -->
+
+                <img
+                    class="portrait"
+                    src="assets/lohith.png"
+                    alt="Portrait of S. Lohith"
+                    title="S. Lohith — portfolio portrait"
+                    width="900"
+                    height="1100">
+
+
+                <span class="sticker two">
+
+                    future technologist ✦
+
+                </span>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MOVING TICKER
+             ================================================= -->
+
+        <div class="ticker">
+
+            <div class="ticker-track">
+
+                CSE ✦
+                APP DEVELOPMENT ✦
+                ROBOTICS ✦
+                AI/ML ✦
+                CYBERSECURITY ✦
+                SEMICONDUCTORS ✦
+                CONTENT ✦
+                FOOTBALL ✦
+                CRICKET ✦
+
+                CSE ✦
+                APP DEVELOPMENT ✦
+                ROBOTICS ✦
+                AI/ML ✦
+                CYBERSECURITY ✦
+                SEMICONDUCTORS ✦
+                CONTENT ✦
+                FOOTBALL ✦
+                CRICKET ✦
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ABOUT
+             ================================================= -->
+
+        <section id="about"
+                 class="wrap">
+
+
+            <span class="section-tag">
+
+                01 / ABOUT ME
+
+            </span>
+
+
+            <div class="grid-2">
+
+
+                <article class="card about-card">
+
+
+                    <h2>
+
+                        Curious by default.
+
+                    </h2>
+
+
+                    <p>
+
+                        I'm an aspiring engineer interested in
+
+                        robotics, semiconductors and AI/ML,
+
+                        with a strong interest in cybersecurity
+
+                        and the business side of technology.
+
+                        I'm currently building hands-on skills
+
+                        through independent app development
+
+                        projects while exploring these fields further.
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>Mission:</strong>
+
+                        turn curiosity into
+
+                        <em>working prototypes</em>,
+
+                        useful products and a career that sits
+
+                        close to technology.
+
+                    </p>
+
+
+                </article>
+
+
+                <article class="card">
+
+
+                    <h3>
+
+                        My current vibe
+
+                    </h3>
+
+
+                    <p>
+
+                        <b>Builder</b> •
+
+                        <i>Learner</i> •
+
+                        <u>Creator</u> •
+
+                        <mark>Tech enthusiast</mark>
+
+                    </p>
+
+
+                    <p>
+
+                        I like learning by making.
+
+                        <small>One project at a time.</small>
+
+                        <big>Big curiosity.</big>
+
+                    </p>
+
+
+                    <p>
+
+                        <abbr title="Computer Science Engineering">
+
+                            CSE
+
+                        </abbr>
+
+                        student at RMK Engineering College.
+
+                    </p>
+
+
+                    <p dir="ltr">
+
+                        <bdo dir="rtl">
+
+                            hello from Lohith
+
+                        </bdo>
+
+                        ← a small HTML text-direction demo.
+
+                    </p>
+
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             EDUCATION
+             ================================================= -->
+
+        <section id="education"
+                 class="wrap">
+
+
+            <span class="section-tag">
+
+                02 / EDUCATION
+
+            </span>
+
+
+            <h2>
+
+                Learning arc.
+
+            </h2>
+
+
+            <div class="timeline">
+
+
+                <article class="timeline-item">
+
+
+                    <div class="year">
+
+                        2026—2030
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            B.E. Computer Science Engineering
+
+                        </h3>
+
+                        <p>
+
+                            RMK Engineering College
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+                <article class="timeline-item">
+
+
+                    <div class="year">
+
+                        Class XII
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            Sri Chaitanya Techno School
+
+                        </h3>
+
+                        <p>
+
+                            CBSE Board —
+
+                            <strong>90%</strong>
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+                <article class="timeline-item">
+
+
+                    <div class="year">
+
+                        Class X
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            Sri Chaitanya Techno School
+
+                        </h3>
+
+                        <p>
+
+                            CBSE Board —
+
+                            <strong>92%</strong>
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SKILLS
+             ================================================= -->
+
+        <section id="skills"
+                 class="wrap">
+
+
+            <span class="section-tag">
+
+                03 / SKILLS
+
+            </span>
+
+
+            <h2>
+
+                Things I can work with.
+
+            </h2>
+
+
+            <div class="grid-3">
+
+
+                <!-- APP DEVELOPMENT -->
+
+                <article class="card">
+
+                    <h3>
+
+                        App Development
+
+                    </h3>
+
+
+                    <ul type="disc">
+
+                        <li>
+                            FlutterFlow
+                        </li>
+
+                        <li>
+                            Firebase
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- PROGRAMMING -->
+
+                <article class="card">
+
+                    <h3>
+
+                        Programming
+
+                    </h3>
+
+
+                    <ul type="circle">
+
+                        <li>
+                            Python
+                        </li>
+
+                        <li>
+                            Problem solving foundations
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- CREATIVE -->
+
+                <article class="card">
+
+                    <h3>
+
+                        Creative & Content
+
+                    </h3>
+
+
+                    <ul type="square">
+
+                        <li>
+                            Video editing
+                        </li>
+
+                        <li>
+                            Photo editing
+                        </li>
+
+                        <li>
+                            Content writing
+                        </li>
+
+                        <li>
+                            Illustration / drawing
+                        </li>
+
+                    </ul>
+
+                </article>
+
+
+                <!-- LANGUAGE -->
+
+                <article class="card">
+
+                    <h3>
+
+                        Language
+
+                    </h3>
+
+
+                    <ol type="A">
+
+                        <li>
+                            English
+                        </li>
+
+                        <li>
+                            Basic German
+                        </li>
+
+                    </ol>
+
+                </article>
+
+
+                <!-- TECH INTERESTS -->
+
+                <article class="card">
+
+                    <h3>
+
+                        Tech interests
+
+                    </h3>
+
+
+                    <div class="tag-cloud">
+
+                        <span class="tag">
+                            Robotics
+                        </span>
+
+                        <span class="tag">
+                            AI/ML
+                        </span>
+
+                        <span class="tag">
+                            Cybersecurity
+                        </span>
+
+                        <span class="tag">
+                            Semiconductors
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BUSINESS -->
+
+                <article class="card">
+
+                    <h3>
+
+                        Business interests
+
+                    </h3>
+
+
+                    <ol type="i">
+
+                        <li>
+                            Stock markets
+                        </li>
+
+                        <li>
+                            Technology & innovation
+                        </li>
+
+                        <li>
+                            How markets respond to tech
+                        </li>
+
+                    </ol>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROJECTS
+             ================================================= -->
+
+        <section id="projects"
+                 class="wrap">
+
+
+            <span class="section-tag">
+
+                04 / PROJECTS
+
+            </span>
+
+
+            <h2>
+
+                Built, not just imagined.
+
+            </h2>
+
+
+            <div class="grid-2">
+
+
+                <!-- SKILLNEST -->
+
+                <article class="card project">
+
+
+                    <div>
+
+                        <div class="number">
+
+                            01
+
+                        </div>
+
+
+                        <h3>
+
+                            SkillNest — Freelancer Marketplace
+
+                        </h3>
+
+
+                        <p>
+
+                            An ongoing independent project:
+
+                            designing and developing a freelancer
+
+                            marketplace app solo using
+
+                            <strong>
+
+                                FlutterFlow + Firebase
+
+                            </strong>.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="tag-cloud">
+
+                        <span class="tag">
+                            FlutterFlow
+                        </span>
+
+                        <span class="tag">
+                            Firebase
+                        </span>
+
+                        <span class="tag">
+                            Product
+                        </span>
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- 3D HOLOGRAM -->
+
+                <article class="card project">
+
+
+                    <div>
+
+                        <div class="number">
+
+                            02
+
+                        </div>
+
+
+                        <h3>
+
+                            3D Hologram
+
+                        </h3>
+
+
+                        <p>
+
+                            Independently designed and built a
+
+                            3D hologram as a Grade 10 science
+
+                            project and won
+
+                            <strong>
+
+                                3rd place
+
+                            </strong>
+
+                            at school level.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="tag-cloud">
+
+                        <span class="tag">
+                            Prototype
+                        </span>
+
+                        <span class="tag">
+                            Science
+                        </span>
+
+                        <span class="tag">
+                            Solo
+                        </span>
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACHIEVEMENTS
+             ================================================= -->
+
+        <section id="achievements"
+                 class="wrap">
+
+
+            <span class="section-tag">
+
+                05 / WINS & LEADERSHIP
+
+            </span>
+
+
+            <h2>
+
+                More than just code.
+
+            </h2>
+
+
+            <div class="grid-3">
+
+
+                <!-- CRICKET -->
+
+                <article class="card achievement">
+
+
+                    <div class="emoji">
+
+                        🏏
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            U19 District Cricket
+
+                        </h3>
+
+
+                        <p>
+
+                            Qualified player;
+
+                            played 2–3 round-robin matches.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- FOOTBALL -->
+
+                <article class="card achievement">
+
+
+                    <div class="emoji">
+
+                        ⚽
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            Football Zonals
+
+                        </h3>
+
+
+                        <p>
+
+                            TN-level participant and
+
+                            two-time winner,
+
+                            Inter-Zonals Football.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- HEAD BOY -->
+
+                <article class="card achievement">
+
+
+                    <div class="emoji">
+
+                        👑
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            Head Boy
+
+                        </h3>
+
+
+                        <p>
+
+                            Head Boy of school from
+
+                            2024–2026,
+
+                            representing the student body.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- HOUSE LEADER -->
+
+                <article class="card achievement">
+
+
+                    <div class="emoji">
+
+                        🛡️
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            Knights House Leader
+
+                        </h3>
+
+
+                        <p>
+
+                            Led participation in march pasts
+
+                            and helped organize house activities.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- CREATIVE -->
+
+                <article class="card achievement">
+
+
+                    <div class="emoji">
+
+                        🎯
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            Creative Skills
+
+                        </h3>
+
+
+                        <p>
+
+                            Video editing, photo editing,
+
+                            content writing and
+
+                            illustration/drawing.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+                <!-- LEETCODE -->
+
+                <article class="card achievement">
+
+
+                    <div class="emoji">
+
+                        💻
+
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+
+                            LeetCode Journey
+
+                        </h3>
+
+
+                        <p>
+
+                            Building coding practice
+
+                            alongside my CSE journey.
+
+                        </p>
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INTERESTS
+             ================================================= -->
+
+        <section class="wrap">
+
+
+            <span class="section-tag">
+
+                06 / INTERESTS
+
+            </span>
+
+
+            <div class="card"
+                 style="background: var(--orange);">
+
+
+                <h2>
+
+                    Where my curiosity goes.
+
+                </h2>
+
+
+                <dl>
+
+
+                    <dt>
+
+                        <h4>
+
+                            App Development
+
+                        </h4>
+
+                    </dt>
+
+
+                    <dd>
+
+                        Turning ideas into usable digital products.
+
+                    </dd>
+
+
+                    <dt>
+
+                        <h4>
+
+                            Robotics & AI/ML
+
+                        </h4>
+
+                    </dt>
+
+
+                    <dd>
+
+                        Exploring intelligent systems
+
+                        and physical computing.
+
+                    </dd>
+
+
+                    <dt>
+
+                        <h4>
+
+                            Cybersecurity
+
+                        </h4>
+
+                    </dt>
+
+
+                    <dd>
+
+                        Understanding how systems
+
+                        can be protected.
+
+                    </dd>
+
+
+                    <dt>
+
+                        <h4>
+
+                            Business & Stock Trading
+
+                        </h4>
+
+                    </dt>
+
+
+                    <dd>
+
+                        Following how technology and
+
+                        innovation affect markets.
+
+                    </dd>
+
+
+                </dl>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             HTML FEATURES LAB
+             ================================================= -->
+
+        <section class="wrap">
+
+
+            <span class="section-tag">
+
+                07 / HTML LAB
+
+            </span>
+
+
+            <h2>
+
+                Yes, I used the syllabus too.
+
+            </h2>
+
+
+            <div class="html-lab">
+
+
+                <h3>
+
+                    HTML elements used in this portfolio
+
+                </h3>
+
+
+                <p>
+
+                    This page uses
+
+                    <strong>headings</strong>
+
+                    from H1–H6,
+
+                    paragraphs,
+
+                    nested formatting,
+
+                    <em>emphasis</em>,
+
+                    <u>underline</u>,
+
+                    <mark>marking</mark>,
+
+                    <small>small text</small>,
+
+                    <big>larger text</big>,
+
+                    and
+
+                    x<sup>2</sup> + H<sub>2</sub>O.
+
+                </p>
+
+
+                <p>
+
+                    Legacy formatting examples from the
+
+                    workshop material:
+
+                    <strike>old text</strike>
+
+                    •
+
+                    <tt>monospaced text</tt>
+
+                    •
+
+                    <b>bold</b>
+
+                    •
+
+                    <i>italic</i>.
+
+                </p>
+
+
+                <!-- IMAGE ATTRIBUTES -->
+
+                <h4>
+
+                    Image attributes
+
+                </h4>
+
+
+                <p>
+
+                    The portfolio uses
+
+                    <code>&lt;img&gt;</code>
+
+                    with
+
+                    <strong>src</strong>,
+
+                    <strong>alt</strong>,
+
+                    <strong>title</strong>,
+
+                    <strong>width</strong>,
+
+                    <strong>height</strong>,
+
+                    and a clickable image link.
+
+                </p>
+
+
+                <p>
+
+
+                    <img
+                        src="assets/lohith.png"
+                        alt="Small portrait of S. Lohith"
+                        title="S. Lohith image demo"
+                        width="120"
+                        height="150"
+                        border="3"
+                        align="right">
+
+
+                    This small image intentionally demonstrates
+
+                    the image border and alignment attributes
+
+                    covered in the HTML workshop.
+
+                    The image is placed beside this paragraph
+
+                    to keep the example compact.
+
+
+                </p>
+
+
+                <div style="clear: both;"></div>
+
+
+                <!-- ORDERED LISTS -->
+
+                <h4>
+
+                    Ordered list styles
+
+                </h4>
+
+
+                <ol type="1">
+
+                    <li>
+                        Numerals
+                    </li>
+
+                    <li>
+                        Second item
+                    </li>
+
+                </ol>
+
+
+                <ol type="I">
+
+                    <li>
+                        Uppercase Roman
+                    </li>
+
+                    <li>
+                        Second item
+                    </li>
+
+                </ol>
+
+
+                <ol type="a">
+
+                    <li>
+                        Lowercase letters
+                    </li>
+
+                    <li>
+                        Second item
+                    </li>
+
+                </ol>
+
+
+                <!-- PRE -->
+
+                <h5>
+
+                    Preformatted code
+
+                </h5>
+
+
+                <pre><code>&lt;h1&gt;Hello, future!&lt;/h1&gt;
+&lt;p&gt;Build something worth showing.&lt;/p&gt;</code></pre>
+
+
+                <!-- TABLE -->
+
+                <h6>
+
+                    Table + caption + rowspan + colspan
+
+                </h6>
+
+
+                <table
+                    class="mini-table"
+                    title="Selected portfolio highlights"
+                    border="1"
+                    bordercolor="black"
+                    bgcolor="white"
+                    width="100%"
+                    height="220">
+
+
+                    <caption>
+
+                        Selected Portfolio Highlights
+
+                    </caption>
+
+
+                    <tr>
+
+                        <th>
+                            Area
+                        </th>
+
+                        <th>
+                            Detail
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td rowspan="2">
+
+                            Projects
+
+                        </td>
+
+                        <td>
+
+                            SkillNest
+
+                        </td>
+
+                        <td>
+
+                            Ongoing
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+
+                            3D Hologram
+
+                        </td>
+
+                        <td>
+
+                            Completed
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td colspan="2">
+
+                            Current Degree:
+
+                            B.E. CSE at RMK Engineering College
+
+                        </td>
+
+                        <td>
+
+                            2026—2030
+
+                        </td>
+
+                    </tr>
+
+
+                </table>
+
+
+                <!-- HTML ENTITIES -->
+
+                <p title="HTML entity examples">
+
+                    Entities:
+
+                    &copy; 2026 Lohith
+
+                    •
+
+                    &trade; LOHITH.S
+
+                    •
+
+                    non-breaking&nbsp;space.
+
+                </p>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT
+             ================================================= -->
+
+        <section id="contact"
+                 class="wrap">
+
+
+            <div class="contact">
+
+
+                <span class="section-tag">
+
+                    08 / CONTACT
+
+                </span>
+
+
+                <h2>
+
+                    Let's build something.
+
+                </h2>
+
+
+                <p>
+
+                    Want to connect,
+
+                    collaborate or talk tech?
+
+                    Reach me at
+
+
+                    <a href="mailto:slohith8408@gmail.com">
+
+                        slohith8408@gmail.com
+
+                    </a>
+
+
+                    or call
+
+
+                    <a href="tel:+919840372400">
+
+                        +91 98403 72400
+
+                    </a>.
+
+                </p>
+
+
+                <div class="socials">
+
+
+                    <!-- LINKEDIN -->
+
+                    <a class="social"
+                       href="https://www.linkedin.com/in/lohith-s-0b3135433"
+                       target="_blank"
+                       rel="noopener">
+
+
+                        <img
+                            alt="LinkedIn logo"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='8' fill='%230A66C2'/%3E%3Ctext x='8' y='36' font-family='Arial' font-size='30' font-weight='700' fill='white'%3Ein%3C/text%3E%3C/svg%3E">
+
+
+                        View LinkedIn ↗
+
+                    </a>
+
+
+                    <!-- LEETCODE -->
+
+                    <a class="social"
+                       href="https://leetcode.com/u/lohi_2008/"
+                       target="_blank"
+                       rel="noopener">
+
+
+                        <img
+                            alt="LeetCode logo"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='10' fill='%23FFA116'/%3E%3Cpath d='M14 29c4-10 8-15 13-15 4 0 5 3 8 5l-4 4c-2-2-3-3-5-3-2 0-4 3-7 9 4-2 7-1 11 2l-3 5c-4-3-7-4-13-1z' fill='white'/%3E%3C/svg%3E">
+
+
+                        View LeetCode ↗
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        <p>
+
+            <strong>
+
+                S. LOHITH
+
+            </strong>
+
+            —
+
+            B.E. CSE •
+
+            RMK Engineering College
+
+        </p>
+
+
+        <p>
+
+            <small>
+
+                Built with HTML, CSS, curiosity & a little chaos 
+
+            </small>
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
